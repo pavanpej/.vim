@@ -10,7 +10,8 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Set the colorscheme
-colorscheme molokai
+" colorscheme molokai
+set background=dark
 
 " Disable compatibility with vi which can cause unexpected issues.
 set nocompatible
@@ -42,8 +43,18 @@ set shiftwidth=4
 " Set tab width to 4 columns.
 set tabstop=4
 
+" Be smart when using tabs
+set smarttab
+
 " Use space characters instead of tabs.
 set expandtab
+
+set ai "Auto indent
+set si "Smart indent
+set wrap "Wrap lines
+
+" Add extra margin on the left
+set foldcolumn=1
 
 " While searching though a file incrementally highlight matching characters as you type.
 set incsearch
@@ -63,6 +74,13 @@ set hlsearch
 " Set the commands to save in history default number is 20.
 set history=1000
 
+" Always show current position
+set ruler
+
+" Set to auto read when a file is changed from the outside
+set autoread
+au FocusGained,BufEnter * silent! checktime
+
 " PLUGINS ---------------------------------------------------------------- {{{
 
 " Plugin code goes here.
@@ -70,6 +88,8 @@ set history=1000
 call plug#begin('~/.vim/plugged')
 
 " add plugins here
+
+
 
 call plug#end()
 
